@@ -65,26 +65,28 @@ class Contact extends React.Component{
             <div className="container">
                 <div className="row">
                         <div className="col-lg-8">
-                            <form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>   
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+                            <form id="contact-form" data-netlify="true" onSubmit={this.handleSubmit}>
+                <ul>
+              <li className="wow fadeInUp" data-wow-delay="1.4s">
+                <label>
+                  Your Name: <div className="textarea"><input type="text" name="name" value={name} onChange={this.handleChange} /></div>
+                </label>
+              </li>
+              <li className="wow fadeInUp" data-wow-delay="1.6s">
+                <label>
+                  Your Email: <div className="textarea"><input type="email" name="email" value={email} onChange={this.handleChange} /></div>
+                </label>
+              </li>
+              <li className="wow fadeInUp" data-wow-delay="1.6s">
+                <label>
+                  Message: <div className="textarea"><textarea name="message" value={message} onChange={this.handleChange} rows="6" /></div>
+                </label>
+              </li>
+                </ul>
+              <p>
+                <button type="submit" id="contact-submit" className="send wow fadeInUp">Send Message</button>
+              </p>
+            </form>
                         </div>
                 </div>
             </div>
