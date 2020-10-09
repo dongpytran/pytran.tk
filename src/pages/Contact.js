@@ -14,7 +14,7 @@ class Contact extends React.Component{
           fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact-me", ...this.state })
+            body: encode({ "form-name": "contactme", ...this.state })
           })
             .then(() => alert("Success! Your message was sent successfully, thank you!"))
             .catch(error => alert("Can't send your message, please try again!"));
@@ -65,26 +65,26 @@ class Contact extends React.Component{
             <div className="container">
                 <div className="row">
                         <div className="col-lg-8">
-                            <form onSubmit={this.handleSubmit}>
-              <p>
-                <label>
-                  Your Name: <input type="text" name="name" value={name} onChange={this.handleChange} />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your Email: <input type="email" name="email" value={email} onChange={this.handleChange} />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Message: <textarea name="message" value={message} onChange={this.handleChange} />
-                </label>
-              </p>
-              <p>
-                <button type="submit">Send</button>
-              </p>
-            </form>
+                            <form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name: <input type="text" name="name" /></label>   
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
                         </div>
                 </div>
             </div>
