@@ -66,7 +66,7 @@ class Contact extends React.Component{
                 <div className="row">
                         <div className="col-lg-8">
                             <form id="contact-form" data-netlify="true" onSubmit={this.handleSubmit}>
-                <input type="hidden" name="form-name" value="contact" />
+                
                 <ul>
               <li className="wow fadeInUp" data-wow-delay="1.4s">
                 <label>
