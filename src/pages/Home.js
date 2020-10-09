@@ -70,7 +70,7 @@ class Home extends React.Component{
                         <h1 className="line anim-typewriter">I Love Hardstyle!!</h1>
                         
                   </div>
-                  <video id="bg-video" autoPlay loop playsInline preload="metadata">
+                  <video id="bg-video" autoPlay loop playsInline preload="auto">
                         <source src="./assets/video/bg.mp4" type="video/mp4"/>
                         <source src="./assets/video/bg.mp4" type="video/ogg"/>
                         Your browser does not support video
